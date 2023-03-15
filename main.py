@@ -43,7 +43,7 @@ while running:
 		values.append(input('Агент: '))
 		values.append(int(input('КВ общий (%): ')) / 100 * values[4])
 		values.append(int(input('КВ отдающий (%): ')) / 100 * values[5])
-		print(values)
+		print('\n', values)
 		createRow(values)
 		print('Запись создана.\n\n')
 		
@@ -56,7 +56,9 @@ while running:
 4 - Срок страхования
 5 - Страховая сумма
 6 - Страховая премия
-7 - Агент"""))
+7 - Агент
+
+"""))
 		if search == 1:
 			for i in selectRow(f'name LIKE "%{input()}%"'):
 				print(i)
@@ -78,8 +80,7 @@ while running:
 		elif search == 7:
 			for i in selectRow(f'agent LIKE "%{input()}%"'):
 				print(i)
-		finally:
-			print(),
+			print()
 	
 	if action == 0:
 		running = False
